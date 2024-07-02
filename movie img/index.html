@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Gallery</title>
+     
+</head>
+<body>
+    <center>
+    <div class="container">
+        <div class="movie">
+            <img src="img1.jpeg" alt="Doctor Strange 2">
+            <h2>Doctor Strange 2</h2>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+        <div class="movie">
+            <img src="img2.jpeg" alt="Bhool Bhulaiyaa 2">
+            <h2>Bhool Bhulaiyaa 2</h2>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+        <div class="movie">
+            <img src="img3.jpeg" alt="Jayeshbhai Jordaar">
+            <h2>Jayeshbhai Jordaar</h2>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+        <div class="movie">
+            <img src="img4.jpeg" alt="Jurassic World">
+            <h2>Jurassic World</h2>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+        <div class="movie">
+            <img src="img5.jpeg" alt="KGF2">
+            <h2>KGF2</h2>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+        <div class="movie">
+            <img src="img7.jpeg" alt="RRR">
+            <h2>RRR</h2>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+    </div>
+    </center>
+</body>
+</html>
+<style>
+             
+     body{
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+     
+    }
+   
+    
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 10px;
+       
+    }
+    
+    .movie {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 5px;
+    }
+    
+    .movie img {
+        width: 8rem;
+        height:8rem ;
+        border-radius: 3px;
+    }
+    
+    .movie h2 {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+    
+    .movie p {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+    
+    .movie button {
+        background-color:blue;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+       
+        font-size:20px;
+    }
+    
+    .movie button:hover {
+        background-color: blue;
+    }
+    
+</style>
+
+    
