@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav">
+            <div class="logo">
+                <a href="#">Coffee</a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Contect</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Start your day with<br>fresh Coffee</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Totam eligendi sit nostrum eius, earum,
+                debitis, ea <br>odio maiores tempore numquam repudiandae modi.</p>
+            <button>Order Now</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    body{
+        background-image:url(co.jpg) ;
+        background-size: cover;
+        
+    }
+
+    .main {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .nav {
+        height: 3rem;
+        background-color: black;
+        color: white;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav .logo a {
+        text-decoration: none;
+        color: white;
+        margin: 5rem;
+        font-size: 1.5rem;
+    }
+
+    .menu ul {
+        display: flex;
+        list-style-type: none;
+    }
+    .menu li {
+        margin: 3rem;
+    }
+    .menu ul li a {
+        overflow: hidden;
+        color: white;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+    .content p{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.3rem;
+        font-weight: .5rem;
+        color: white;
+       
+    }
+    .content{
+       margin: 8rem;
+    }
+    .content h1{
+        color: white;
+    }
+    .content button{
+        font-size: 1rem;
+        font-family: 'Times New Roman', Times, serif;
+        margin-top: .5rem;
+        padding: .2rem;
+        background-color:rgb(162, 153, 153);
+        border-radius: .3rem;
+        color:white;
+    }
+    .logo a:hover{
+        color:paleturquoise;
+        font-size: 1.5rem;
+        border:.2rem solid white;
+        box-shadow: black;
+       
+    }
+     .menu a:hover{
+        color: aqua;
+        font-weight: bold;
+        border: .2rem solid wheat;
+     }
+
+</style>
