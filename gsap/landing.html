@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Landing Page</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+    }
+
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #010101;
+        overflow-x: hidden;
+        color: #fff;
+        height: 100%;
+        width: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 50px;
+        position: fixed;
+         top: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    nav ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+    }
+
+    nav ul li a {
+        position: relative;
+        content: ' ';
+        font-size: 1.2rem;
+    }
+
+    nav ul li a::before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        bottom: -10%;
+        width: 0;
+        height: 1px;
+        background-color: #fff;
+        transition: all ease 0.5s;
+    }
+
+    nav ul li a:hover::before {
+        width: 100%;
+    }
+
+    .content {
+        padding: 0 100;
+        height: 100vh;
+        align-items: center;
+        display: flex;
+        position: relative;
+    }
+
+    .content .text {
+        width: 100%;
+    }
+
+    .content .img_group {
+        position: absolute;
+        top: 15%;
+        left: 0;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 90px;
+
+        z-index: -1;
+    }
+
+    .content .img_group img {
+        opacity: 0;
+    }
+
+    h1 {
+        font-size: 126px;
+        font-weight: 400;
+        line-height: 126px;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    h1 .photo {
+        position: relative;
+    }
+
+    h1 .photo::before {
+        content: ' ';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background-color: #fff;
+        left: 0;
+        bottom: 0;
+        transition: all ease 1s;
+        cursor: pointer;
+    }
+
+    h1 .photo:hover::before {
+        width: 100%;
+
+    }
+
+    .bottom_text {
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        text-align: center;
+        width: 100%;
+
+    }
+
+    .bottom_text h5 {
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+</style>
+
+<body>
+    <main>
+        <header>
+            <div class="logo">
+                <h2>Azure</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Photos</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="content">
+            <div class="text">
+                <h1>
+                    <sapn>Hello,I'm</span><br>
+                        <span>A Portratis</span><br>
+                        <span class="photo">Photographer</span>
+                </h1>
+            </div>
+            <div class="img_group">
+                <div class="img-group_inner">
+                    <img src="img1.jpeg">
+                    <img src="img2.jpeg">
+                    <img src="img3.jpeg">
+                    <img src="img4.png">
+
+                </div>
+            </div>
+            <div class="bottom_text">
+                <h5>American Photographer, filmmaker and musician</h5>
+            </div>
+        </section>
+    </main>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</html>
+<script>
+    $(document).ready(function(){
+        $(".text h1 span, .bottom_text  h5").lettering();
+        var t1=gsap.timeline();
+        t1.from(".text h1 span",{
+            x:-20,
+            duration:1,
+            opacity:0,
+            stagger:.1
+        })
+        t1.from(".img_group img",{
+            x:1100,
+            duration:1,
+            opacity:0,
+            stagger:.14
+        })
+        t1.to(".img_group img",{
+            x:1100,
+            margin:'0 -140px 0',
+            duration:1,
+            opacity:1,
+            rotate:15,
+            stagger:.14
+        })
+        t1.from(".bottom_text h5 span",{
+            x:-20,
+            duration:1,
+            opacity:0,
+           stagger:.14
+        })
+        t1.from("header .logo",{
+            y:-20,
+            duration:1,
+            opacity:0
+           
+        })
+        t1.from("header nav li",{
+            y:-20,
+            duration:1,
+            opacity:0,
+            stagger:.07
+           
+        })
+        setTimeout(function(){
+            $(".photo").mouseover(function(){
+                gsap.to(".img_group img",{
+                    x:100,
+                    margin:'0 10px 0',
+                    duration:1,
+                    opacity:1,
+                    rotate:0,
+                    stagger:.14
+                });
+            });
+            $(".photo").mouseout(function(){
+                gsap.to(".img_group img",{
+                    x:1100,
+                    margin:'0 -140px 0',
+                    duration:1,
+                    opacity:1,
+                    rotate:15,
+                    stagger:.14
+                });
+            });
+        }, 5000);
+    });
+</script>

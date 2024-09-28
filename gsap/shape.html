@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.6rem;
+            color: #fff;
+            overflow-x: hidden;
+            height: 100vh;
+            width: 100vw;
+           
+        }
+        
+        header{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 100px;
+            position:fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+        .menu i{
+            background-color:  black;
+        }
+        header .logo a{
+            position: relative;
+            color: white;
+            text-decoration: none;
+            color: black;
+            
+        }
+        header .logo a::before{
+            content: ' ';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: #98c1d9;
+            z-index: -1;
+            opacity: 0;
+            transform: scale(.3);
+            transition: all ease 0.4s;
+
+        }
+        header  .menu a:hover::before{
+            opacity: 1;
+            transform: scale(1);
+        }
+        h1{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: normal;
+            font-size: 48px;
+            color: #3d5a80;
+            text-transform: uppercase;
+
+        }
+        p{
+            font-size: 1.6rem;
+            color: #293241;
+            margin: 15px 0 50px 0;
+            line-height: 26px;
+        }
+        .hero-sec a{
+            display: inline-block;
+            padding: 16px 27px;
+            border: 1px solid #3d5a80;
+            font-size: 1.4rem;
+            color: #3d5a80;
+            text-transform: uppercase;
+            border-radius: 5rem;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all ease 0.8s;
+            
+        }
+        .hero-sec a::before{
+            content: ' ';
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 20rem;
+            height: 20rem;
+            background-color: #3d5a80;
+            border-radius: 50%;
+            transition: all ease 0.8s;
+            transform: scale(0);
+            z-index: -1;
+           
+        }
+        .hero-sec a:hover::before{
+            transform: scale(1) translate(-3rem,-7rem);
+            background-color: aqua;
+        }
+        .hero-sec a:hover{
+            border-color:black;
+            color:#3d5a80;
+        }
+        .hero-sec{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 180px 100px;
+        }
+        .hero-sec-text{
+            max-width: 400px;
+            margin-left: 100px;
+        }
+        .hero-sec-img .block{
+            width: 8rem;
+            height: 8rem;
+            display: inline-block;
+           
+        }
+        .hero-sec-img{
+            padding-right: rem;
+        }
+        .hero-sec-img-inner{
+           max-width: 350px;
+            display: inline-block;
+        }
+         .block1{
+            background-color: #3d5a80;
+            border-radius: 0 200px 0 0;
+        }
+        .block2{
+            background-color:#2f9295;
+            border-radius:  200px 0 0 0;
+        }
+        .block3{
+            background-color: #ee6c4d;
+            border-radius: 0  0 200px 0 ;
+        }
+        .block4{
+            background-color: #7c95a4;
+            border-radius: 0 0 0 200px;
+        }
+        .overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #e0fbfc;
+            z-index: 99999;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <main>
+        <header>
+            <div class="logo">
+               <a href="#">CodeTime</a>
+            </div>
+            <div class="menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+        <section class="hero-sec">
+            <div class="hero-sec-text">
+                <h1>Unlock your bussiness idea</h1>
+                <p>In vestibulum est a dictum rhoncus si solliciudin magins ullamcorper</p>
+                <a href="#">Let's Unlock</a>
+            </div>
+            <div class="hero-sec-img">
+                <div class="hero-sec-img-inner">
+                    <div class="block block1"></div>
+                    <div class="block block2"></div>
+                    <div class="block block3"></div>
+                    <div class="block block4"></div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+</body>
+</html>
+<script>
+    gsap.to(".overlay",{
+        duration:2,
+        x:'100%',
+        delay:1
+    })
+    const t1=gsap.timeline({ repeat:-1});
+    t1
+    
+    t1.from(".block1, .block3",{
+        x:100,
+        duration:1,
+        delay:1
+    });
+    t1.from(".block2, .block4",{
+        x:150,
+        duration:1,
+        delay:1
+    },'-=1');
+
+    t1.to(".block1, .block3",{
+        x:0,
+        y:100,
+        duration:1,
+        delay:1
+    });
+    t1.to(".block2, .block4",{
+        x:0,
+        y:-100,
+        duration:1,
+        delay:1
+    },);
+    t1.to(".block1, .block3",{
+        
+        y:100,
+        scaleX:-1,
+        duration:1
+
+    });
+    t1.to(".block2, .block4",{
+        x:0,
+        y:100,
+        scaleX:-1,
+        duration:1
+
+    });
+    
+    t1.to(".block2",{
+        // x:100,
+        y:100,
+        // scaleX:1,
+        duration:1,
+        delay:1
+    }, '-=1');
+    t1.to(".block1, .block3",{
+        x:0,
+        y:0,
+        duration:1,
+        delay:1,
+        scaleX:-1
+
+    });
+    t1.to(".block2, .block4",{
+        x:0,
+        y:-100,
+        scaleX:-1,
+        duration:1
+
+    }, '-=1')
+    t1.to(".block",{
+        x:0,
+        y:0,
+        scaleX:1,
+        duration:1
+       
+    },'-=1')
+    t1.from(".block",{
+        
+    })
+   
+
+
+    
+</script>
